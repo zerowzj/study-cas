@@ -7,11 +7,15 @@
     <artifactId>cas-client</artifactId>
     <version>1.0</version>
 
+    <properties>
+        <cas.client.version>3.5.1</cas.client.version>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>org.jasig.cas.client</groupId>
             <artifactId>cas-client-core</artifactId>
-            <version>3.5.1</version>
+            <version>${cas.client.version}</version>
         </dependency>
     </dependencies>
 </project>

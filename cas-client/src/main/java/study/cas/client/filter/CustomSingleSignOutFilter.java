@@ -1,4 +1,6 @@
 package study.cas.client.filter;
 
-public class CustomSingleSignOutFilter extends AbstractConfigurationFilter  {
+import org.jasig.cas.client.util.AbstractConfigurationFilter;
+
+public class CustomSingleSignOutFilter extends AbstractConfigurationFilter {
 }
