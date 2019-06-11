@@ -6,4 +6,12 @@
     <groupId>study</groupId>
     <artifactId>cas-client</artifactId>
     <version>1.0</version>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.jasig.cas.client</groupId>
+            <artifactId>cas-client-core</artifactId>
+            <version>3.5.1</version>
+        </dependency>
+    </dependencies>
 </project>
