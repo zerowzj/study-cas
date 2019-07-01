@@ -6,6 +6,7 @@
     <groupId>study.sso</groupId>
     <artifactId>cas-server</artifactId>
     <version>1.0</version>
+    <packaging>war</packaging>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -16,42 +17,33 @@
 
     <dependencies>
         <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-beans</artifactId>
-            <version>${spring.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-core</artifactId>
-            <version>${spring.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-context</artifactId>
-            <version>${spring.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-context-support</artifactId>
-            <version>${spring.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-web</artifactId>
-            <version>${spring.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-webmvc</artifactId>
-            <version>${spring.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.apereo.cas</groupId>
-            <artifactId>cas-server-core-util-api</artifactId>
-            <version>5.3.8</version>
+            <groupId>org.jasig.cas</groupId>
+            <artifactId>cas-server-webapp</artifactId>
+            <version>4.2.7</version>
+            <type>war</type>
+            <scope>runtime</scope>
         </dependency>
     </dependencies>
+
+    <build>
+        <finalName>cas</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>3.2.2</version>
+                <configuration>
+                    <failOnMissingWebXml>false</failOnMissingWebXml>
+                    <overlays>
+                        <overlay>
+                            <dependency>
+                                <groupId>org.jasig.cas</groupId>
+                                <artifactId>cas-server-webapp</artifactId>
+                            </dependency>
+                        </overlay>
+                    </overlays>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>
