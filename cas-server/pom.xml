@@ -24,7 +24,6 @@
     </dependencies>
 
     <build>
-        <finalName>cas</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -32,12 +31,11 @@
                 <version>3.2.2</version>
                 <configuration>
                     <failOnMissingWebXml>false</failOnMissingWebXml>
+                    <warName>cas-server</warName>
                     <overlays>
                         <overlay>
-                            <dependency>
-                                <groupId>org.jasig.cas</groupId>
-                                <artifactId>cas-server-webapp</artifactId>
-                            </dependency>
+                            <groupId>org.jasig.cas</groupId>
+                            <artifactId>cas-server-webapp</artifactId>
                         </overlay>
                     </overlays>
                 </configuration>
